@@ -25,7 +25,7 @@ class Page(models.Model):
     title = models.CharField(max_length=50, verbose_name='Название')
     is_public = models.BooleanField(default=False, verbose_name='Опубликована')
     content = models.TextField(null=True, blank=True, verbose_name='Контент')
-    images = models.ManyToManyField('PageImage', null=True, blank=True, verbose_name='Изображения')
+    images = models.ManyToManyField('PageImage', blank=True, verbose_name='Изображения')
     date_created = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     views = models.PositiveIntegerField(default=0, verbose_name='Количество просмотров')
 
