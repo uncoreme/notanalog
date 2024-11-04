@@ -118,6 +118,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# custom variables
+LOGIN_URL = 'main:login'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
