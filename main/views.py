@@ -5,7 +5,7 @@ from django.contrib.auth.views import LoginView, PasswordResetView, PasswordRese
 from django.shortcuts import render
 from django.contrib.auth.forms import AuthenticationForm, PasswordResetForm
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, DetailView
 
 from main.models import Profile, Page, PageImage
 from main.forms import RegistrationForm
@@ -50,3 +50,10 @@ class ResetPasswordUserConfirmView(PasswordResetConfirmView):
 class ResetPasswordUserCompleteView(PasswordResetCompleteView):
     template_name = 'main/authorization/password_reset/password_reset_complete.html'
 # --------- авторизация ---------
+
+
+class PageDetailView(DetailView):
+    model = Page
+    context_object_name = 'page'
+    template_name = 'main/page.html'
+    pk_url_kwarg = 'pk'

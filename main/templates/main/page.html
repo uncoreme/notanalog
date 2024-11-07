@@ -1,0 +1,31 @@
+{% extends 'main/layouts/basic.html' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+    <style>
+        .field {
+            border: 0;
+            outline: 0;
+        }
+        .field > *:not(ol),
+        .field > *:not(ul){
+            padding: 0;
+            margin: 0;
+        }
+        .field > ol,
+        .field > ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .editor {
+            display: flex;
+            flex-flow: column nowrap;
+            row-gap: 5px;
+        }
+    </style>
+    {% csrf_token %}
+    <div class="editor">
+        <div class="field" contenteditable="true">{{ page_content }}</div>
+    </div>
+{% endblock %}

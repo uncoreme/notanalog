@@ -1,0 +1,8 @@
+{
+    "name": "Notanalog",
+    "short_name": "Notanalog",
+    "start_url": ".",
+    "display": "fullscreen",
+    "background_color": "#000",
+    "icons": []
+}
