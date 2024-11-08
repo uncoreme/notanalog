@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --background1: #181818;
+    --background2: #202020;
+    --text1: #E0E0E0;
+    --text2: #B0B0B0;
+    --objects1: #636363;
+    --objects2: #2C2C2C;
+    --montserrat-sb-40px: 600 40px 'Montserrat', sans-serif;
+    --montserrat-sb-32px: 600 32px 'Montserrat', sans-serif;
+    --montserrat-sb-24px: 600 24px 'Montserrat', sans-serif;
+    --montserrat-sb-22px: 600 22px 'Montserrat', sans-serif;
+    --montserrat-sb-20px: 600 20px 'Montserrat', sans-serif;
+    --montserrat-sb-18px: 600 18px 'Montserrat', sans-serif;
+    --montserrat-sb-16px: 600 16px 'Montserrat', sans-serif;
+    --montserrat-med-20px: 500 20px 'Montserrat', sans-serif;
+    --montserrat-med-18px: 500 18px 'Montserrat', sans-serif;
+    --montserrat-med-16px: 500 16px 'Montserrat', sans-serif;
+    --montserrat-med-14px: 500 14px 'Montserrat', sans-serif;
+    --montserrat-med-12px: 500 12px 'Montserrat', sans-serif;
+    --montserrat-reg-20px: 400 20px 'Montserrat', sans-serif;
+    --montserrat-reg-18px: 400 18px 'Montserrat', sans-serif;
+    --montserrat-reg-16px: 400 16px 'Montserrat', sans-serif;
+    --montserrat-reg-14px: 400 14px 'Montserrat', sans-serif;
+    --montserrat-reg-12px: 400 12px 'Montserrat', sans-serif;
+    --montserrat-lght-16px: 300 16px 'Montserrat', sans-serif;
+    --shadow: 0 0 20px rgba(0, 0, 0, .1);
+}

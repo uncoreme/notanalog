@@ -1,7 +1,8 @@
-function xhrRequest(method='POST', url, csrfToken, successFunction, errorFunction, data) {
+function xhrRequest(method= 'POST', url, data, csrfToken,
+                    successFunction, errorFunction) {
     const xhr = new XMLHttpRequest();
 
-    xhr.open(method, url, true);
+    xhr.open(method, url, true)
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('X-CSRFToken', csrfToken);
 
@@ -12,7 +13,7 @@ function xhrRequest(method='POST', url, csrfToken, successFunction, errorFunctio
             }
         } else {
             if (errorFunction !== null) {
-                errorFunction();
+                errorFunction(xhr);
             }
         }
     };
@@ -26,8 +27,27 @@ function getCSRFToken(doc) {
     return csrf
 }
 
-function removeItemsFromLocalStorage(items) {
-    items.forEach((item) => {
-        localStorage.removeItem(item);
-    });
+function removeEmptyElements(array) {
+    while (array.length > 0 && array[array.length - 1] === '') {
+        array.pop();
+    }
+
+    let index = 0;
+    while (index < array.length && array[index].trim() === '') {
+        index++;
+    }
+    array = array.slice(index)
+    return array;
+}
+
+function setCursorToEnd(element) {
+    const range = document.createRange();
+    const selection = window.getSelection();
+
+    range.selectNodeContents(element);
+    range.selectNodeContents(element);
+    range.collapse(false);
+
+    selection.removeAllRanges();
+    selection.addRange(range);
 }

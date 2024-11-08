@@ -6,7 +6,7 @@ from main.serializers import PageSerializer
 
 class PageAPIView(viewsets.ModelViewSet):
     serializer_class = PageSerializer
-    http_method_names = ['get', 'put']
+    http_method_names = ['get', 'put', 'post']
 
     def get_queryset(self):
         if self.request.user.is_authenticated:

@@ -8,12 +8,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
     <link rel="manifest" href="{% static 'main/manifest/manifest.webmanifest' %}">
+    <link rel="stylesheet" href="{% static 'main/css/settings.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/page.css' %}">
 </head>
 <body>
-    {% block content %}{% endblock %}
+    <header class="navbar">
+        <div id="pages-and-account">
+            <div id="account">
+                <div id="account-name">
+                    <div id="account-photo"><img src="/media/{{ profile.photo }}" alt=""></div>
+                    <div id="account-username">{{ user }}</div>
+                </div>
+                <img src="{% static 'main/images/arrow-left.png' %}" alt="" class="settings">
+            </div>
+            <a href="{% url 'main:home' %}" class="page">
+                <img src="{% static 'main/images/home.png' %}" alt="" class="icon">
+                <div class="page-title">Главная</div>
+            </a>
+            <div class="divider"></div>
+            {% for page in pages %}
+                <a href="{% url 'main:page' pk=page.pk %}" class="page">
+                    <img src="{% static 'main/images/triangle.png' %}" alt="" class="triangle">
+                    {% if page.icon %}
+                        <img src="/media/{{ page.icon }}" alt="" class="icon">
+                    {% else %}
+                        <div>📄</div>
+                    {% endif %}
+                    <div class="page-title">{{ page.title }}</div>
+                </a>
+            {% endfor %}
+        </div>
+    </header>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/showdown@v2.1.0/dist/showdown.min.js"></script>
-    <script src="{% static 'main/js/markdown.js' %}"></script>
-    <script src="{% static 'main/js/save_page.js' %}"></script>
+    <script src="{% static 'main/js/page.js' %}"></script>
     <script src="{% static 'main/js/utilities.js' %}"></script>
 </body>
 </html>
