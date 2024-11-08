@@ -19,7 +19,7 @@
             <div id="account">
                 <div id="account-name">
                     <div id="account-photo"><img src="/media/{{ profile.photo }}" alt=""></div>
-                    <div id="account-username">{{ user }}</div>
+                    <div id="account-username">{% if profile %}{{ profile.nickname }}{% else %}{{ user.username }}{% endif %}</div>
                 </div>
                 <img src="{% static 'main/images/arrow-left.png' %}" alt="" class="settings">
             </div>
@@ -36,7 +36,7 @@
                     {% else %}
                         <div>📄</div>
                     {% endif %}
-                    <div class="page-title">{{ page.title }}</div>
+                    <div class="page-title">{{ page.title|truncatechars:18 }}</div>
                 </a>
             {% endfor %}
         </div>
